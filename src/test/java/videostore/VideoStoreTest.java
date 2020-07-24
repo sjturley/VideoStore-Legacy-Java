@@ -1,6 +1,7 @@
 package videostore;
 
 import org.approvaltests.Approvals;
+import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,9 +10,10 @@ import java.util.List;
 public class VideoStoreTest {
     @Test
     public void approveCustomerStatement() {
-        String statement = createStatement(Movie.REGULAR, 3);
+        Integer[] priceCodeChoices = {Movie.REGULAR};
+        Integer[] daysRentedChoices = {3};
 
-        Approvals.verify(statement);
+        CombinationApprovals.verifyAllCombinations(this::createStatement, priceCodeChoices, daysRentedChoices);
     }
 
     private String createStatement(int priceCode, int daysRented) {
