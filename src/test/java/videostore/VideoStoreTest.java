@@ -1,5 +1,6 @@
 package videostore;
 
+import org.approvaltests.Approvals;
 import org.approvaltests.combinations.CombinationApprovals;
 import org.approvaltests.reporters.QuietReporter;
 import org.approvaltests.reporters.UseReporter;
@@ -18,6 +19,8 @@ public class VideoStoreTest {
                 return Arrays.asList(new Rental(new Movie("Star Wars", Movie.REGULAR), 3));
             }
         };
-        customer.statement();
+        String statement = customer.statement();
+
+        Approvals.verify(statement);
     }
 }
