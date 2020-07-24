@@ -8,5 +8,7 @@ import org.junit.Test;
 public class VideoStoreTest {
     @Test
     public void approveCustomerStatement() {
+        Customer customer = new Customer("Steve");
+        customer.statement();
     }
 }
