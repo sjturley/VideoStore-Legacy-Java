@@ -13,14 +13,18 @@ import java.util.List;
 public class VideoStoreTest {
     @Test
     public void approveCustomerStatement() {
+        String statement = createStatement();
+
+        Approvals.verify(statement);
+    }
+
+    private String createStatement() {
         Customer customer = new Customer("Steve") {
             @Override
             protected List<Rental> getRentals() {
                 return Arrays.asList(new Rental(new Movie("Star Wars", Movie.REGULAR), 3));
             }
         };
-        String statement = customer.statement();
-
-        Approvals.verify(statement);
+        return customer.statement();
     }
 }
