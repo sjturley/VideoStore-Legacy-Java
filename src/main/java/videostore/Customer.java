@@ -1,5 +1,6 @@
 package videostore;
 
+import java.util.List;
 import java.util.Vector;
 
 class Customer {
@@ -13,11 +14,15 @@ class Customer {
         return name;
     }
 
+    protected List<Rental> getRentals() {
+        return RentalService.getRentals();
+    }
+
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
-        for (Rental each : RentalService.getRentals()) {
+        for (Rental each : getRentals()) {
             double thisAmount = 0;
 
             //determine amounts for each line
