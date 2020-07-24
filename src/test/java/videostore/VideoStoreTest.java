@@ -10,8 +10,8 @@ import java.util.List;
 public class VideoStoreTest {
     @Test
     public void approveCustomerStatement() {
-        Integer[] priceCodeChoices = {Movie.REGULAR};
-        Integer[] daysRentedChoices = {3};
+        Integer[] priceCodeChoices = {Movie.REGULAR, Movie.NEW_RELEASE, Movie.CHILDRENS, 3};
+        Integer[] daysRentedChoices = {1, 2, 3, 5};
 
         CombinationApprovals.verifyAllCombinations(this::createStatement, priceCodeChoices, daysRentedChoices);
     }
