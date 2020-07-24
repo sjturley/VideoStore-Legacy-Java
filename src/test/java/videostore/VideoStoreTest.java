@@ -20,7 +20,9 @@ public class VideoStoreTest {
         Customer customer = new Customer("Steve") {
             @Override
             protected List<Rental> getRentals() {
-                return Arrays.asList(new Rental(new Movie("Star Wars", priceCode), daysRented));
+                Rental starWars = new Rental(new Movie("Star Wars", priceCode), daysRented);
+                Rental raidersOfTheLostArk = new Rental(new Movie("Raiders of the Lost Ark", Movie.REGULAR), 1);
+                return Arrays.asList(starWars, raidersOfTheLostArk);
             }
         };
         return customer.statement();

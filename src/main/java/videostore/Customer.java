@@ -42,7 +42,7 @@ class Customer {
                     break;
             }
 
-            frequentRenterPoints = 1;
+            frequentRenterPoints++;
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
                     each.getDaysRented() > 1) frequentRenterPoints++;
 
