@@ -11,3 +11,4 @@ Video Store Legacy Kata in Java based on the first chapter of Refactoring by Mar
 1. Run the test, inspect the output, and approve the result.
 1. Run your test with code coverage and check for branches missing coverage. Add more combinations until all branches of the code are fully covered.
 1. Test mutations by finding places in the production code to modify. Do your tests fail when you break the production code? If they do not fail, the tests are not yet sufficient.
+1. Update tests to prevent mutation failures.
